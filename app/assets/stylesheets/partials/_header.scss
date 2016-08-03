@@ -1,14 +1,43 @@
+/* header */
+
+/* ---- Logo ---- */
+#logo {
+  float: left;
+  margin-right: 10px;
+  font-size: 1.5em;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  padding-top: 5px;
+  font-weight: bold;
+}
+
+#logo:hover {
+  color: #fff;
+  opacity: 0.9;
+  text-decoration: none;
+}
 
 /* ---- Navbar right ---- */
 .navbar-right {
   margin-right: 15px;
+  li {
+    border-left: 1px solid #4D4D4F;
+    padding-top: 5px;
+    &:hover {
+      background-color: #4D4D4F;
+    }
+  }
 }
 
 /* ---- Carousel ---- */
-.carousel .item {
-  height: 650px;
-  img {
-    width: 100%;
+.carousel {
+  margin-top: -10px;
+  .item {
+    height: 650px;
+    img {
+      width: 100%;
+    }
   }
 }
 

@@ -28,7 +28,9 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
-        format.html { redirect_to @user, notice: 'User was successfully created.' }
+        flash[:success] = 'Your account has been successfully created.'
+        flash[:info] = 'Please fill in your account information'
+        format.html { redirect_to @user }
         format.json { render :show, status: :created, location: @user }
       else
         format.html { render :new }
@@ -69,6 +71,6 @@ class UsersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
-      params.require(:user).permit(:first_name, :last_name, :email, :password_digest, :mobile_number)
+      params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation, :mobile_number)
     end
 end
