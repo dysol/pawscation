@@ -28,6 +28,7 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        log_in @user
         flash[:success] = 'Your account has been successfully created.'
         flash[:info] = 'Please fill in your account information'
         format.html { redirect_to @user }

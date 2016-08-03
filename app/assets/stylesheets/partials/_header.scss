@@ -30,6 +30,19 @@
   }
 }
 
+/* ---- Navbar left ---- */
+.navbar-left {
+  li {
+    border-right: 1px solid #4D4D4F;
+    padding-top: 5px;
+    &:hover {
+      background-color: #4D4D4F;
+    }
+  }
+}
+
+
+
 /* ---- Carousel ---- */
 .carousel {
   margin-top: -10px;

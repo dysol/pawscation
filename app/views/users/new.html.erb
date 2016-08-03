@@ -1,4 +1,4 @@
-<%= provide(:heading, 'Sign up') %>
+<%#= provide(:heading, 'Sign up') %>
 
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
@@ -33,10 +33,13 @@
       </div>
 
       <div class="actions">
-        <%= f.submit "CREATE MY ACCOUNT", class: "btn btn-primary" %>
+        <%= f.submit "Sign up with Email", class: "btn btn-primary" %>
       </div>
     <% end %>
-    <%#= link_to "Existing user?", login_path, class: 'linkto-text' %>
+    <%= link_to "Existing user?", login_path, class: 'linkto-text' %>
+    <small>
+      By signing up, I agree to Pawscation’s Terms of Service, Payments Terms of Service and Privacy Policy
+    </small>
   </div>
 
 </div>
