@@ -7,23 +7,21 @@
   <nav>
     <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
-        <li>
+        <li class="navlinks-right">
           <%= link_to current_user, class: 'navbar-links' do %>
             <span class="glyphicon glyphicon-list-alt navbar-icons" aria-hidden="true"></span> My Listing
           <% end %>
         </li>
 
-        <li class="dropdown">
+        <li class="dropdown navlinks-right">
           <a href="#" class="dropdown-toggle navbar-links" data-toggle="dropdown">
             Wellos, Pawer <%= @current_user.first_name %> <b class="caret"></b>
           </a>
 
           <ul class="dropdown-menu">
+            <li><%= link_to "My Account", account_path(anchor: 'main'), class: 'navbar-drop' %></li>
             <% if is_admin? %>
-              <li><%= link_to "Admin", '#', class: 'navbar-drop' %></li>
-              <li><%= link_to "View All Accounts", users_path, class: 'navbar-drop' %></li>
-            <% else %>
-              <li><%= link_to "My Account", '#', class: 'navbar-drop' %></li>
+              <li><%= link_to "View All Accounts", users_path(anchor: 'main'), class: 'navbar-drop' %></li>
             <% end %>
 
             <li class="divider"></li>
@@ -31,8 +29,8 @@
           </ul>
         </li>
       <% else %>
-        <li><%= link_to "Sign up", signup_path(anchor: 'main'), class: 'navbar-links' %></li>
-        <li><%= link_to "Log in", login_path(anchor: 'main'), class: 'navbar-links' %></li>
+        <li class="navlinks-right"><%= link_to "Sign up", signup_path(anchor: 'main'), class: 'navbar-links' %></li>
+        <li class="navlinks-right"><%= link_to "Log in", login_path(anchor: 'main'), class: 'navbar-links' %></li>
       <% end %>
     </ul>
   </nav>

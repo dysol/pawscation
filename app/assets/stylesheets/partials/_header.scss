@@ -21,10 +21,18 @@
 /* ---- Navbar right ---- */
 .navbar-right {
   margin-right: 15px;
-  li {
+  .navlinks-right {
     border-left: 1px solid #4D4D4F;
     padding-top: 5px;
     &:hover {
+      background-color: #4D4D4F;
+    }
+  }
+  /*  Dropdown menu when logged in  */
+  .open {
+
+    a:focus, a:hover {
+      color: #fff;
       background-color: #4D4D4F;
     }
   }

@@ -1,0 +1,60 @@
+<%= provide(:heading, 'Edit profile') %>
+
+<div class="row">
+
+    <%= form_for(current_user, url: account_path(anchor: 'main') ) do |f| %>
+      <!-- For showing errors -->
+      <%= render 'partials/error_messages', object: f.object %>
+      <!-- Form fields -->
+      <div class="col-md-3 col-md-offset-3">
+        <div class="field">
+          <%= f.label :first_name %>
+          <%= f.text_field :first_name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-3">
+        <div class="field">
+          <%= f.label :last_name %>
+          <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-3">
+        <div class="field">
+          <%= f.label :mobile_number %>
+          <%= f.telephone_field :mobile_number, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-3">
+        <div class="field">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-3">
+        <div class="field">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-3">
+        <div class="field">
+          <%= f.label :password_confirmation %>
+          <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-md-offset-3">
+        <div class="actions">
+          <%= f.submit "Update profile", class: "btn btn-primary" %>
+        </div>
+      </div>
+
+    <% end %>
+
+
+</div>

@@ -1,8 +1,5 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-
   root 'static_pages#home'
-
   # static pages
   get '/about',   to: 'static_pages#about'
   get '/help',    to: 'static_pages#help'
@@ -13,11 +10,11 @@ Rails.application.routes.draw do
 
   # Login routes (session)
   get     '/login',     to: 'sessions#new'
-  # get     '/account',   to: 'sessions#edit'
   post    '/login',     to: 'sessions#create'
-  # patch   '/account',   to: 'sessions#update'
+  get     '/account',   to: 'sessions#edit'
+  patch   '/account',   to: 'sessions#update'
   delete  '/logout',    to: 'sessions#destroy'
 
   # CRUD routes (RESTful)
-  resources :users,   except: [ :new ]
+  resources :users,   except: [ :new, :edit ]
 end

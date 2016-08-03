@@ -6,6 +6,8 @@ class User < ApplicationRecord
   VALID_EMAIL_REGEX = /\A[\w+\-]+@[a-z\d\-.]+\.[a-z]+\z/i
   # hashing password
   has_secure_password
+  attr_accessor :creating_user
+
 
   validates   :first_name,
               presence:       true,
@@ -29,7 +31,8 @@ class User < ApplicationRecord
 
   validates  :mobile_number,
               format:          { with: /\A\d{8}\z/ },  # 8-digit numbers (SG)
-              allow_nil:       true
+              unless:          :creating_user
+              # allow_nil:       true
 
   private
     def set_format
