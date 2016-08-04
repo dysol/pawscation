@@ -7,6 +7,18 @@
 
 
 /* show listing sector */
+.listing-image {
+  width: 100%;
+  height: 200px;
+  background-size: cover;
+  background-position: center;
+  margin-top: 10px;
+  margin-bottom: 20px;
+
+  li {
+    list-style: none;
+  }
+}
 
   .listing-row {
   margin-top: 30px;

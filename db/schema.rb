@@ -13,8 +13,9 @@
 ActiveRecord::Schema.define(version: 20160803180149) do
 
   create_table "listings", force: :cascade do |t|
-    t.text     "content"
     t.string   "photo"
+    t.string   "address"
+    t.text     "content"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false

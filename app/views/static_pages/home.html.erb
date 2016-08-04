@@ -1,1 +1,13 @@
 <%= provide(:heading, "Meet your furrers") %>
+
+<!-- Display listings -->
+<div class="row">
+  <% @listings.each do |listing| %>
+  <%= link_to listing_path(listing.id), class: 'listing-links' do %>
+    <div class="col-md-4 show-listings">
+      <div class="listing-image" style="background-image: url(<%= listing.photo.url %>)"></div>
+      <h4>Posted by: <%= listing.user.first_name %></h4>
+    </div>
+  <% end %>
+  <% end %>
+</div>
