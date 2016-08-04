@@ -3,10 +3,11 @@
 <!-- Display listings -->
 <div class="row">
   <% @listings.each do |listing| %>
-  <%= link_to listing_path(listing.id), class: 'listing-links' do %>
+  <%= link_to listing_path(listing.id, anchor: 'main'), class: 'listing-links' do %>
     <div class="col-md-4 show-listings">
-      <div class="listing-image" style="background-image: url(<%= listing.photo.url %>)"></div>
-      <h4>Posted by: <%= listing.user.first_name %></h4>
+      <div class="preview-listing" style="background-image: url(<%= listing.photo.url %>)"></div>
+      <h4><%= listing.address %></h4>
+      <p>Posted by: <%= listing.user.first_name %></p>
     </div>
   <% end %>
   <% end %>

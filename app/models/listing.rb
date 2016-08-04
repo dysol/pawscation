@@ -7,6 +7,8 @@ class Listing < ApplicationRecord
 
   validates      :user_id, presence: true
 
+  validates      :address, presence: true
+
   validates      :content,
                   presence: { message: 'has to be filled' },
                   length:   { maximum: 500 }

@@ -2,6 +2,10 @@ class ListingsController < ApplicationController
   before_action :require_login,  only:  [ :new, :create, :destroy ]
   before_action :correct_user,   only:  :destroy
 
+  def show
+    @listing = Listing.find(params[:id])
+  end
+
   def new
     @listing = Listing.new
   end
@@ -27,7 +31,7 @@ class ListingsController < ApplicationController
   private
 
     def permitted_listing_params
-      params.require(:listing).permit(:content, :photo)
+      params.require(:listing).permit(:content, :address, :photo)
     end
 
     def correct_user

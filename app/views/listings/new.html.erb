@@ -4,14 +4,18 @@
   <%= form_for(@listing, url: host_path(anchor: 'main'), html: { multipart: true }) do |f| %>
     <%= render 'partials/error_messages', object: f.object %>
     <span class="photo">
-      <%= f.file_field :photo, accept: 'image/jpeg,image/gif,image/png' %>
+      <%= f.file_field  :photo,     accept: 'image/jpeg,image/gif,image/png' %>
     </span>
     <div class="field">
-      <%= f.text_area :content, placeholder: "Write a short description of your place and services.." %>
+      <%= f.text_field  :address,   class: 'listing-form',  placeholder: 'Enter address' %>
+    </div>
+    <div class="field">
+      <%= f.text_area   :content,   class: 'listing-form',  placeholder: "Write a short description of your place and services.." %>
       <%#= f.hidden_field :product_id, value: @product.id %>
     </div>
     <%= f.submit "Add New Listing", class: "btn btn-primary" %>
   <% end %>
+  
   <!-- using jQuery to check file size -->
   <script type="text/javascript">
   $('#listing_picture').bind('change', function() {
