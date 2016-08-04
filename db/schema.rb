@@ -14,10 +14,11 @@ ActiveRecord::Schema.define(version: 20160803180149) do
 
   create_table "listings", force: :cascade do |t|
     t.text     "content"
-    t.string   "photos"
+    t.string   "photo"
     t.integer  "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["user_id", "created_at"], name: "index_listings_on_user_id_and_created_at"
     t.index ["user_id"], name: "index_listings_on_user_id"
   end
 

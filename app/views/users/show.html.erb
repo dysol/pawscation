@@ -1,16 +1,16 @@
 <%= provide(:heading, 'Your listings') %>
 <em>
-  <strong>Winter is coming at:</strong>
+  <strong>Logged in at:</strong>
   <%= Time.now %>
 </em>
 
-<div class="row review-row">
+<div class="row listing-row">
   <!-- top sector -->
   <!-- <div class="col-md-4 profile-image">
     <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Eddard_Stark.jpg" alt="Profile photo" />
   </div> -->
   <!-- bottom sector -->
-  <div class="col-md-12 review-col">
+  <div class="col-md-12 listing-col">
     <% if @user.listings.any? %>
       <h4>Total listings: <%= @user.listings.count %></h4>
       <ol class="listings">

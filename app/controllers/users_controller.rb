@@ -72,6 +72,10 @@ class UsersController < ApplicationController
     end
   end
 
+  def feed
+    Listing.where("user_id = ?", id)
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_user

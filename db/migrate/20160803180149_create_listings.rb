@@ -2,7 +2,7 @@ class CreateListings < ActiveRecord::Migration[5.0]
   def change
     create_table :listings do |t|
       t.text :content
-      t.string :photos
+      t.string :photo
       t.references :user, foreign_key: true
 
       t.timestamps
