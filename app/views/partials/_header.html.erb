@@ -7,12 +7,9 @@
   <nav>
     <ul class="nav navbar-nav navbar-right">
       <% if logged_in? %>
-        <li class="navlinks-right">
-          <%= link_to current_user, class: 'navbar-links' do %>
-            <span class="glyphicon glyphicon-list-alt navbar-icons" aria-hidden="true"></span> My Listing
-          <% end %>
-        </li>
-
+      <!-- show list dropdown -->
+      <%= render 'partials/listing_dropdown' %>
+        <!-- show account dropdown -->
         <li class="dropdown navlinks-right">
           <a href="#" class="dropdown-toggle navbar-links" data-toggle="dropdown">
             Wellos, Pawer <%= @current_user.first_name %> <b class="caret"></b>

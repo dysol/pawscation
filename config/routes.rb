@@ -15,6 +15,11 @@ Rails.application.routes.draw do
   patch   '/account',   to: 'sessions#update'
   delete  '/logout',    to: 'sessions#destroy'
 
+  # Dynamic routes (listings)
+  get  '/host',    to: 'listings#new'
+  post '/host',    to: 'listings#create'
+
   # CRUD routes (RESTful)
-  resources :users,   except: [ :new, :edit ]
+  resources :users,     except: [ :new, :edit ]
+  resources :listings,  except: [ :new ]
 end

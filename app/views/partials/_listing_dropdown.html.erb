@@ -1,0 +1,16 @@
+<li class="dropdown navlinks-right">
+  <a href="#" class="dropdown-toggle navbar-links" data-toggle="dropdown">
+    <span class="glyphicon glyphicon-home navbar-icons" aria-hidden="true"></span> Host
+    <b class="caret"></b>
+  </a>
+
+  <ul class="dropdown-menu">
+    <li>
+      <%= link_to "Manage Listings ", current_user, class: 'navbar-drop' %>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <%= link_to "List Your Space", host_path(anchor: 'main'), class: 'navbar-drop' %>
+    </li>
+  </ul>
+</li>

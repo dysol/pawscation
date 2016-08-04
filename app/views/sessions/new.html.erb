@@ -17,6 +17,13 @@
         <%= f.password_field :password, class: 'form-control', placeholder: 'Password' %>
       </div>
 
+      <div class="field">
+        <%= f.label :show_password, class: "checkbox inline" do %>
+          <%= f.check_box :show_password %>
+          <span>Show password</span>
+        <% end %>
+      </div>
+      
       <div class="actions">
         <%= f.submit "Log In", class: "btn btn-primary" %>
       </div>

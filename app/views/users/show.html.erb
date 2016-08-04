@@ -1,21 +1,22 @@
+<%= provide(:heading, 'Your listings') %>
+<em>
+  <strong>Winter is coming at:</strong>
+  <%= Time.now %>
+</em>
 
-
-<p>
-  <strong>First name:</strong>
-  <%= @user.first_name %>
-</p>
-
-<p>
-  <strong>Last name:</strong>
-  <%= @user.last_name %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-<p>
-  <strong>Mobile number:</strong>
-  <%= @user.mobile_number %>
-</p>
+<div class="row review-row">
+  <!-- top sector -->
+  <!-- <div class="col-md-4 profile-image">
+    <img src="https://upload.wikimedia.org/wikipedia/en/3/34/Eddard_Stark.jpg" alt="Profile photo" />
+  </div> -->
+  <!-- bottom sector -->
+  <div class="col-md-12 review-col">
+    <% if @user.listings.any? %>
+      <h4>Total listings: <%= @user.listings.count %></h4>
+      <ol class="listings">
+        <%= render @listings %>
+      </ol>
+      <%= will_paginate @listings %>
+    <% end %>
+  </div>
+</div>

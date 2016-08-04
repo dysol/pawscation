@@ -15,6 +15,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
+    @listings = @user.listings.paginate(page: params[:page])
   end
 
   # GET /users/new

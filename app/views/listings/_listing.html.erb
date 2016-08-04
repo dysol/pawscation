@@ -1,0 +1,14 @@
+<li id="listing-<%= listing.id %>">
+  <span class="user">
+    <%= listing.user.first_name %> commented on:
+    <!-- <i><%#= link_to listing.product.name, listing.product %></i> -->
+  </span>
+  <span class="content"><%= listing.content.capitalize %></span>
+  <span class="timestamp">
+  <%= time_ago_in_words(listing.created_at) %> ago.
+  <% if current_user?(listing.user) %>
+    <%= link_to "delete", listing, method: :delete,
+                                     data: { confirm: "Delete listing?" } %>
+  <% end %>
+  </span>
+</li>

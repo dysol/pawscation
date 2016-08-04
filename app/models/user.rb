@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-
+  has_many  :listings, dependent: :destroy
   before_save :set_format
 
   # VALIDATION
